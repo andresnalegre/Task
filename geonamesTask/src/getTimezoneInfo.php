@@ -19,12 +19,14 @@ if (isset($_GET['lat']) && isset($_GET['lng'])) {
     $lng = $_GET['lng'];
     $data = getTimezoneInfo($lat, $lng);
 
+    header('Content-Type: application/json');
     if (isset($data['timezoneId'])) {
         echo json_encode(['status' => 'ok', 'data' => $data]);
     } else {
         echo json_encode(['status' => 'error', 'message' => 'No data found']);
     }
 } else {
+    header('Content-Type: application/json');
     echo json_encode(['status' => 'error', 'message' => 'Latitude and longitude parameters are missing']);
 }
 ?>

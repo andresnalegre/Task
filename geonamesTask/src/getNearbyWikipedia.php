@@ -19,12 +19,14 @@ if (isset($_GET['lat']) && isset($_GET['lng'])) {
     $lng = $_GET['lng'];
     $data = getNearbyWikipedia($lat, $lng);
 
+    header('Content-Type: application/json');
     if (isset($data['geonames']) && count($data['geonames']) > 0) {
         echo json_encode(['status' => 'ok', 'data' => $data['geonames']]);
     } else {
         echo json_encode(['status' => 'error', 'message' => 'No data found']);
     }
 } else {
+    header('Content-Type: application/json');
     echo json_encode(['status' => 'error', 'message' => 'Latitude and longitude parameters are missing']);
 }
 ?>

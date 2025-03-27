@@ -1,5 +1,3 @@
 {
-    "name": "andresnalegre/task",
-    "description": "Project to retrieve geographical information using the GeoNames API.",
     "require": {}
 }
