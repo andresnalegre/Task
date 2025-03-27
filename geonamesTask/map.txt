@@ -1,0 +1,21 @@
+Directory: geonamesTask
+Date: 27/03/2025 18:26:32
+Root folder: /Users/andresnicolasalegre/Desktop/N/geonamesTask
+--------------------------------------------------
+
+📁 geonamesTask
+    📁 libs
+        📁 css
+            📄 styles.css
+        📁 js
+            📄 jquery-2.2.3.min.js
+            📄 script.js
+        📁 php
+            📄 getCountryInfo.php
+            📄 getNearbyWikipedia.php
+            📄 getTimezoneInfo.php
+    📄 composer.json
+    📄 index.html
+    📄 index.php
+
+--------------------------------------------------
