@@ -13,7 +13,7 @@ $(document).ready(function() {
         $('#result').html('');
 
         $.ajax({
-            url: '../src/getCountryInfo.php',
+            url: 'getCountryInfo.php',
             type: 'GET',
             dataType: 'json',
             data: { country: country },
@@ -70,7 +70,7 @@ $(document).ready(function() {
         var lng = coordinates[city].lng;
 
         $.ajax({
-            url: '../src/getNearbyWikipedia.php',
+            url: 'getNearbyWikipedia.php',
             type: 'GET',
             dataType: 'json',
             data: { lat: lat, lng: lng },
@@ -107,7 +107,7 @@ $(document).ready(function() {
         var lng = coordinates[language].lng;
 
         $.ajax({
-            url: '../src/getTimezoneInfo.php',
+            url: 'getTimezoneInfo.php',
             type: 'GET',
             dataType: 'json',
             data: { lat: lat, lng: lng },
