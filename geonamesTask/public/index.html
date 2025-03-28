@@ -47,6 +47,18 @@
             <button id="getLanguageInfo">Get Language Info</button>
         </div>
 
+        <div class="form-group">
+            <label for="earthquakeRegion">Select a Region:</label>
+            <select id="earthquakeRegion" name="earthquakeRegion">
+                <option value="-34.6037,-58.3816,-34.5937,-58.3716">Buenos Aires</option>
+                <option value="51.5074,-0.1278,51.5274,-0.1078">London</option>
+                <option value="53.3498,-6.2603,53.3598,-6.2503">Dublin</option>
+                <option value="40.7128,-74.0060,40.7328,-73.9860">New York</option>
+                <option value="-23.5505,-46.6333,-23.5405,-46.6233">São Paulo</option>
+            </select>
+            <button id="getEarthquakeInfo">Get Earthquake Info</button>
+        </div>
+
         <div id="loading" class="loading" style="display: none;">Loading...</div>
         <div id="result" class="result"></div>
     </div>

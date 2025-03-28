@@ -132,4 +132,44 @@ $(document).ready(function() {
             }
         });
     });
+
+    $(document).ready(function() {
+        $('#getEarthquakeInfo').on('click', function() {
+            var selectedRegion = $('#earthquakeRegion').val().split(',');
+            var north = selectedRegion[0];
+            var south = selectedRegion[1];
+            var east = selectedRegion[2];
+            var west = selectedRegion[3];
+    
+            $('#loading').show();
+            $('#result').html('');
+    
+            $.ajax({
+                url: 'getEarthquakeInfo.php',
+                type: 'GET',
+                dataType: 'json',
+                data: {
+                    north: north,
+                    south: south,
+                    east: east,
+                    west: west
+                },
+                success: function(result) {
+                    $('#loading').hide();
+                    if (result.status === 'ok') {
+                        var earthquakes = result.data.map(eq => `
+                            <p><strong>Magnitude:</strong> ${eq.magnitude}</p>
+                        `).join('');
+                        $('#result').html(earthquakes);
+                    } else {
+                        $('#result').html('Error retrieving earthquake information.');
+                    }
+                },
+                error: function() {
+                    $('#loading').hide();
+                    $('#result').html('Request error. Please try again later.');
+                }
+            });
+        });
+    });
 });
